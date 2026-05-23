@@ -1,0 +1,13 @@
+import turtle
+
+t = turtle.Pen()
+turtle.bgcolor("black")
+t.speed(0)
+
+# 150 tane çemberi sürekli hafif kaydırarak ve büyüterek çiziyoruz
+for i in range(150):
+    t.pencolor("cyan")  
+    t.circle(i * 1.5)  # Çember her adımda büyür
+    t.left(10)         # SİHİR BURADA: Her çemberde çok hafif bir dönme açısı 3D hissi verir
+
+turtle.done()
