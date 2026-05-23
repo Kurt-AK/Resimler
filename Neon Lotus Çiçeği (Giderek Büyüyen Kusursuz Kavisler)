@@ -1,0 +1,21 @@
+import turtle
+
+# Ekran ve Kalem Ayarları
+t = turtle.Pen()
+turtle.bgcolor("black")
+t.speed(0)  # En yüksek animasyon hızı
+
+# Göz alıcı neon renk paleti
+renkler = ["magenta", "cyan", "yellow", "lime"]
+
+# 150 yapraklı çiçeğin büyüme döngüsü
+for i in range(150):
+    t.pencolor(renkler[i % 4])
+    
+    # Sivri uçlu yaprak çizim formülü
+    t.circle(i * 2, 90)  # Yaprağın sol kıvrımını çizer (Yarım çember)
+    t.left(90)           # Yaprağın sivri ucunu oluşturur
+    t.circle(i * 2, 90)  # Yaprağın sağ kıvrımını çizer
+    t.left(30)           # Bir sonraki yaprak için hafifçe döner
+
+turtle.done()
