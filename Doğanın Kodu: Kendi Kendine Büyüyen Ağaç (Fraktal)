@@ -1,0 +1,27 @@
+import turtle
+
+t = turtle.Turtle()
+turtle.bgcolor("black")
+t.color("lime")  # Fosforlu yeşil
+t.speed(0)
+
+# Ağacı çizmeye alt ortadan başlamak için
+t.left(90)
+t.up()
+t.backward(150) 
+t.down()
+
+# Kendi içinden tekrar çıkan sihirli formül
+def agac_ciz(dal_boyu):
+    if dal_boyu > 10:
+        t.forward(dal_boyu)     # İleri git dalı çiz
+        t.right(20)             # Sağa kıvrıl
+        agac_ciz(dal_boyu - 15) # O daldan daha küçük yeni dallar çıkar!
+        t.left(40)              # Sola kıvrıl
+        agac_ciz(dal_boyu - 15) # Oradan da yeni dallar çıkar!
+        t.right(20)             # Açıyı düzelt
+        t.backward(dal_boyu)    # Gövdeye geri dön
+
+# İlk dalı 100 boyunda başlat
+agac_ciz(100) 
+turtle.done()
