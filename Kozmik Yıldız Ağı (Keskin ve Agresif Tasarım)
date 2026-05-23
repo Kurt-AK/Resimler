@@ -1,0 +1,16 @@
+import turtle
+
+t = turtle.Pen()
+turtle.bgcolor("black")
+t.speed(0)
+
+# Uzay temalı soğuk renkler
+renkler = ["white", "cyan", "dodgerblue", "darkviolet"]
+
+# 250 çizgilik yıldız patlaması
+for i in range(250):
+    t.pencolor(renkler[i % 4])
+    t.forward(i * 2)  # Çizgiler dışa doğru hızla uzar
+    t.right(144)      # SİHİRLİ AÇI: Kesintisiz bir yıldız oluşturur
+
+turtle.done()
