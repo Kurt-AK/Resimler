@@ -1,0 +1,20 @@
+import random
+import time
+
+# Terminal yazısını klasik "hacker yeşili" yapmak için (ANSI kodu)
+print("\033[92m")
+print("Sisteme sızılıyor... Lütfen bekleyin.")
+time.sleep(2)
+
+karakterler = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-="
+
+try:
+    while True:
+        # Ekrana rastgele boşluklar ve karakterler basar
+        satir = "".join(random.choice(karakterler) if random.random() > 0.5 else " " for _ in range(80))
+        print(satir)
+        time.sleep(0.04) # Akış hızını buradan ayarlayabilirsin
+        
+except KeyboardInterrupt:
+    # Kapatmak için klavyeden Ctrl + C tuşlarına basman yeterli
+    print("\033[0m\nBağlantı kesildi.")
