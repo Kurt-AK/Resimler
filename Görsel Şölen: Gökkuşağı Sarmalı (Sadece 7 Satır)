@@ -1,0 +1,17 @@
+import turtle
+
+t = turtle.Pen()
+turtle.bgcolor("black")
+renkler = ["red", "yellow", "blue", "green"]
+
+# Çizim hızını en yükseğe alır, böylece sıkılmazsın
+t.speed(0) 
+
+for x in range(200):
+    t.pencolor(renkler[x % 4])
+    t.forward(x)
+    t.left(91)
+
+# PENCERENİN DONMASINI ENGELLEYEN SİHİRLİ SATIR:
+# Çizim bitince pencereyi açık tutar ve tıklayınca kapatır
+turtle.exitonclick()
