@@ -1,0 +1,19 @@
+import turtle
+
+# Ekran ayarları
+s = turtle.Screen()
+s.bgcolor("black")
+
+t = turtle.Pen()
+t.speed(0)  # En hızlı mod
+
+# Birbirine zıt, parlayan neon renkler
+renkler = ["cyan", "magenta", "yellow", "lime"]
+
+# 120 çemberden oluşan kusursuz bir tur
+for i in range(120):
+    t.pencolor(renkler[i % 4])
+    t.circle(100)  # 100 piksel çapında bir çember çizer
+    t.left(3)      # Sadece 3 derece dönüp yenisini çizer (120x3 = 360 tam tur)
+
+turtle.done()
